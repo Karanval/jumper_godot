@@ -1,0 +1,65 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://scripts/alien.gd" type="Script" id=1]
+[ext_resource path="res://gfx/characters/a_side_stretch_1.png" type="Texture" id=2]
+[ext_resource path="res://gfx/characters/a_side_bend.png" type="Texture" id=3]
+[ext_resource path="res://gfx/characters/a_side_stand_1.png" type="Texture" id=4]
+[ext_resource path="res://gfx/characters/a_side_stretch_2.png" type="Texture" id=5]
+[ext_resource path="res://gfx/characters/a_side_stand_2.png" type="Texture" id=6]
+[ext_resource path="res://gfx/characters/a_side_hurt.png" type="Texture" id=7]
+[ext_resource path="res://gfx/characters/a_side_walk_1.png" type="Texture" id=8]
+[ext_resource path="res://gfx/characters/a_side_walk_2.png" type="Texture" id=9]
+[ext_resource path="res://scripts/playerAnimation.gd" type="Script" id=10]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "fall",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "iddle",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "hurt",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 8 ), ExtResource( 4 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "walk",
+"speed": 4.0
+} ]
+
+[node name="alien" type="KinematicBody2D"]
+
+scale = Vector2( 0.3, 0.3 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+world_limit = 3260
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
+
+frames = SubResource( 1 )
+animation = "hurt"
+script = ExtResource( 10 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
+
+build_mode = 0
+polygon = PoolVector2Array( 35.4875, -162.608, 79.7099, -148.168, 94.1499, -123.8, 121.225, -98.53, 154.617, -68.7475, 173.57, -10.085, 173.57, 35.9425, 164.545, 55.7975, 170.862, 81.9699, 187.107, 85.58, 167.252, 112.655, 164.545, 155.975, -5.12506, 158.682, -8.73505, 116.265, -26.785, 116.265, -26.785, 160.487, -183.82, 156.877, -175.698, 55.7975, -138.695, -25.4275, -61.9825, -107.555, -15.955, -145.46 )
+
+

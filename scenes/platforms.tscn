@@ -1,0 +1,119 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://gfx/platform.png" type="Texture" id=1]
+[ext_resource path="res://gfx/long_platform.png" type="Texture" id=2]
+[ext_resource path="res://gfx/halfPlatform.png" type="Texture" id=3]
+[ext_resource path="res://gfx/short_platform.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 159.448, 30.9575 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 64.37, 31.9138 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="long" type="Sprite" parent="." index="0"]
+
+editor/display_folded = true
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="long" index="0"]
+
+input_pickable = false
+collision_layer = 2
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="long/StaticBody2D" index="0"]
+
+visible = false
+shape = SubResource( 1 )
+
+[node name="long_platform" type="Sprite" parent="." index="1"]
+
+position = Vector2( -1, 92.0003 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="long_platform" index="0"]
+
+input_pickable = false
+collision_layer = 2
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="long_platform/StaticBody2D" index="0"]
+
+visible = false
+shape = SubResource( 1 )
+
+[node name="short" type="Sprite" parent="." index="2"]
+
+editor/display_folded = true
+position = Vector2( 272.001, -1.00035 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="short" index="0"]
+
+editor/display_folded = true
+input_pickable = false
+collision_layer = 2
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="short/StaticBody2D" index="0"]
+
+visible = false
+shape = SubResource( 2 )
+
+[node name="short_platform" type="Sprite" parent="." index="3"]
+
+editor/display_folded = true
+position = Vector2( 271.001, 90.9999 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody2D" type="StaticBody2D" parent="short_platform" index="0"]
+
+input_pickable = false
+collision_layer = 2
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="short_platform/StaticBody2D" index="0"]
+
+visible = false
+shape = SubResource( 2 )
+
+

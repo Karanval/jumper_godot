@@ -1,0 +1,92 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/platform.tres" type="TileSet" id=1]
+[ext_resource path="res://gfx/ambient/crystals.png" type="Texture" id=2]
+[ext_resource path="res://gfx/ambient/crystals2.png" type="Texture" id=3]
+[ext_resource path="res://scenes/jumppad.tscn" type="PackedScene" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 0.5
+} ]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="." index="0"]
+
+mode = 0
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -4390902, 1, 0, -4390897, 1, 0, -3997676, 3, 0, -3801065, 3, 0, -3604460, 3, 0, -3407856, 3, 0, -3211244, 3, 0, -3014640, 3, 0, -2621420, 3, 0, -2228201, 3, 0, -1834988, 3, 0, -1441776, 3, 0, -1048556, 1, 0, -655348, 1, 0, -458747, 1, 0, -65536, 1, 0 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="1"]
+
+position = Vector2( 561.142, -2094.1 )
+frames = SubResource( 1 )
+animation = "default"
+playing = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="." index="2"]
+
+position = Vector2( 694.881, -3698.71 )
+scale = Vector2( 0.6, 0.6 )
+frames = SubResource( 1 )
+animation = "default"
+playing = true
+flip_h = true
+_sections_unfolded = [ "Transform" ]
+
+[node name="jumppads" type="Node2D" parent="." index="3"]
+
+editor/display_folded = true
+
+[node name="jumppad1" parent="jumppads" index="0" instance=ExtResource( 4 )]
+
+position = Vector2( 115.952, -113.572 )
+
+[node name="jumppad2" parent="jumppads" index="1" instance=ExtResource( 4 )]
+
+position = Vector2( 1012.51, -687.567 )
+
+[node name="jumppad3" parent="jumppads" index="2" instance=ExtResource( 4 )]
+
+position = Vector2( 1349.86, -1070.23 )
+
+[node name="jumppad4" parent="jumppads" index="3" instance=ExtResource( 4 )]
+
+position = Vector2( 1071.23, -1454.74 )
+
+[node name="jumppad5" parent="jumppads" index="4" instance=ExtResource( 4 )]
+
+position = Vector2( 1354.59, -1837.41 )
+
+[node name="jumppad6" parent="jumppads" index="5" instance=ExtResource( 4 )]
+
+position = Vector2( 1533.64, -2225.77 )
+
+[node name="jumppad7" parent="jumppads" index="6" instance=ExtResource( 4 )]
+
+position = Vector2( 1327.2, -2608.44 )
+
+[node name="jumppad9" parent="jumppads" index="7" instance=ExtResource( 4 )]
+
+position = Vector2( 1328.68, -3952.36 )
+
+

@@ -1,0 +1,101 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/spiker.gd" type="Script" id=1]
+[ext_resource path="res://gfx/npc/spiker_1.png" type="Texture" id=2]
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "iddle_walk"
+length = 10.0
+loop = true
+step = 1.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 2, 3, 7, 8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 200, 0 ), Vector2( 200, 0 ), Vector2( -200, 0 ), Vector2( -200, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 3, 8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite/Area2D/CollisionPolygon2D:polygon")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 3, 8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ PoolVector2Array( 75.1039, -98.0652, 103.076, -82.331, 168.344, -112.051, 125.803, -55.5246, 143.286, -12.4012, 189.905, -3.65992, 146.782, 24.312, 146.199, 66.8527, 171.257, 98.3211, 138.624, 97.1556, 129.882, 116.969, 148.53, 160.092, 106.572, 145.524, 80.3487, 170.582, 34.8943, 188.647, 6.16071, 188.145, -42.0556, 183.829, -89.5072, 166.574, -146.923, 130.372, -184.219, 128.041, -160.327, 100.652, -173.73, 24.8948, -194.709, -3.65992, -169.068, -3.65992, -160.909, -45.0351, -197.622, -79.4173, -141.096, -72.4243, -121.282, -94.5687, -137.599, -163.333, -76.4108, -114.965, -56.5973, -118.461, -30.3736, -169.161, -20.4669, -118.461, 15.0808, -114.382, 51.794, -145.851, 43.0527, -113.799, 82.6797, -121.375 ), PoolVector2Array( 139.123, -161.274, 118.633, -93.3315, 138.045, -72.841, 197.359, -80.3901, 160.692, -41.5661, 167.163, -7.05589, 190.888, -1.66367, 172.555, 20.9837, 169.32, 66.2784, 163.927, 104.024, 180.104, 126.671, 142.358, 126.671, 88.4362, 166.574, 6.47438, 182.75, -42.0556, 183.829, -89.5072, 166.574, -103.527, 146.083, -149.9, 161.182, -125.096, 115.887, -129.41, 93.2395, -173.626, 96.4749, -139.116, 64.1215, -141.273, 57.6508, -164.998, 56.5724, -139.116, 41.4742, -143.232, 25.4258, -197.471, -6.85943, -140.004, -13.3165, -126.444, -51.4131, -169.706, -116.629, -103.199, -81.7612, -76.0789, -96.6124, -87.7016, -125.669, -39.2737, -111.464, -55.4163, -146.332, -10.8627, -114.692, 23.3596, -119.858, 29.8167, -170.223, 55.6449, -124.378, 78.8903, -114.692 ) ]
+}
+
+[node name="Node2D" type="Node2D"]
+
+position = Vector2( -150, 0 )
+scale = Vector2( 0.2, 0.2 )
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Node2D" type="Node2D" parent="." index="0"]
+
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D" index="0"]
+
+root_node = NodePath("..")
+autoplay = "iddle_walk"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/iddle_walk = SubResource( 1 )
+blend_times = [  ]
+
+[node name="Sprite" type="Sprite" parent="Node2D" index="1"]
+
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="Area2D" type="Area2D" parent="Node2D/Sprite" index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 4
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Node2D/Sprite/Area2D" index="0"]
+
+visible = false
+position = Vector2( -0.705334, -0.881668 )
+rotation = 0.0132526
+build_mode = 0
+polygon = PoolVector2Array( 139.123, -161.274, 118.633, -93.3315, 138.045, -72.841, 197.359, -80.3901, 160.692, -41.5661, 167.163, -7.05589, 190.888, -1.66367, 172.555, 20.9837, 169.32, 66.2784, 163.927, 104.024, 180.104, 126.671, 142.358, 126.671, 88.4362, 166.574, 6.47438, 182.75, -42.0556, 183.829, -89.5072, 166.574, -103.527, 146.083, -149.9, 161.182, -125.096, 115.887, -129.41, 93.2395, -173.626, 96.4749, -139.116, 64.1215, -141.273, 57.6508, -164.998, 56.5724, -139.116, 41.4742, -143.232, 25.4258, -197.471, -6.85943, -140.004, -13.3165, -126.444, -51.4131, -169.706, -116.629, -103.199, -81.7612, -76.0789, -96.6124, -87.7016, -125.669, -39.2737, -111.464, -55.4163, -146.332, -10.8627, -114.692, 23.3596, -119.858, 29.8167, -170.223, 55.6449, -124.378, 78.8903, -114.692 )
+_sections_unfolded = [ "Transform" ]
+
+[connection signal="body_entered" from="Node2D/Sprite/Area2D" to="Node2D" method="_on_Area2D_body_entered"]
+
+

@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/platform.tres" type="TileSet" id=1]
+
+[node name="Node2D" type="Node2D"]
+
+position = Vector2( 0, -770 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="TileMap" type="TileMap" parent="." index="0"]
+
+mode = 0
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -3735541, 3, 0, -3538937, 1, 0, -3538932, 1, 0, -3342336, 1, 0, -3145721, 1, 0, -2949106, 3, 0, -2883573, 3, 0, -2883567, 3, 0, -2818040, 3, 0, -2818028, 3, 0, -2686973, 3, 0, -2555897, 1, 0, -2424818, 1, 0, -2228204, 3, 0, -2228201, 3, 0, -2097139, 1, 0, -1900544, 1, 0, -1900538, 1, 0, -1703925, 1, 0, -1638384, 3, 0, -1572863, 1, 0, -1507308, 3, 0, -1376250, 1, 0, -1376238, 3, 0, -1310697, 3, 0, -1245168, 3, 0, -1179648, 1, 0, -1114100, 3, 0, -1114091, 3, 0, -917489, 1, 0, -786432, 1, 0, -720885, 3, 0, -655351, 3, 0, -589817, 3, 0, -393216, 1, 0, -393193, 3, 0, -327663, 3, 0, -262136, 3, 0, -262135, 1, 0, -196588, 3, 0, -131071, 1, 0, 15, 1, 0, 65543, 3, 0, 196617, 1, 0, 262144, 1, 0, 327695, 1, 0, 524310, 3, 0, 720901, 1, 0, 720907, 1, 0, 720913, 1, 0, 786432, 3, 0 )
+
+

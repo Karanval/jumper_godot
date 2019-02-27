@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://scripts/jumper.gd" type="Script" id=1]
+[ext_resource path="res://gfx/jumper/fall.png" type="Texture" id=2]
+[ext_resource path="res://gfx/jumper/walk_1.png" type="Texture" id=3]
+[ext_resource path="res://gfx/jumper/stand.png" type="Texture" id=4]
+[ext_resource path="res://gfx/jumper/walk_2.png" type="Texture" id=5]
+[ext_resource path="res://gfx/jumper/jump.png" type="Texture" id=6]
+[ext_resource path="res://gfx/jumper/hurt.png" type="Texture" id=7]
+[ext_resource path="res://gfx/jumper/bend.png" type="Texture" id=8]
+[ext_resource path="res://scripts/playerAnimation.gd" type="Script" id=9]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "fall",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "iddle",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 7 ) ],
+"loop": false,
+"name": "hurt",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 8 ) ],
+"loop": false,
+"name": "bend",
+"speed": 5.0
+} ]
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+
+scale = Vector2( 0.5, 0.5 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 15
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Transform" ]
+world_limit = 3260
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="0"]
+
+scale = Vector2( 0.3, 0.3 )
+frames = SubResource( 1 )
+animation = "walk"
+script = ExtResource( 9 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
+
+build_mode = 0
+polygon = PoolVector2Array( -20.2287, -30.0263, -24.2066, -23.7468, -31.2587, 85.6569, -31.9101, 86.7809, -30.4699, 127.493, -19.7411, 171.384, -17.1888, 176.247, -14.8278, 175.817, -11.8228, 171.31, -4.52506, 139.972, -1.73475, 105.201, 13.5047, 100.479, 18.656, 141.69, 25.6672, 168.098, 29.6543, 172.797, 32.2175, 172.797, 34.6382, 168.667, 38.1882, 144.265, 39.2614, 116.147, 37.9735, 79.4441, 26.7967, -4.00106, 20.0025, -26.0014, 16.5955, -31.7041, -1.16345, -39.097 )
+
+

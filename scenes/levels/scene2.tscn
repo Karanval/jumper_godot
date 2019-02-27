@@ -1,0 +1,76 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/platform.tres" type="TileSet" id=1]
+[ext_resource path="res://scenes/spiker.tscn" type="PackedScene" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+position = Vector2( 0, -580 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="TileMap" type="TileMap" parent="." index="0"]
+
+mode = 0
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 64, 64 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -3538944, 1, 0, -3538935, 3, 0, -3473390, 3, 0, -3342333, 1, 0, -3342325, 1, 0, -3342314, 3, 0, -3145707, 3, 0, -2949104, 1, 0, -2752512, 3, 0, -2752504, 1, 0, -2752502, 1, 0, -2752491, 3, 0, -2555902, 1, 0, -2555888, 1, 0, -2424823, 1, 0, -2228223, 3, 0, -2228221, 3, 0, -2228209, 3, 0, -2162681, 3, 0, -2162677, 3, 0, -2097133, 3, 0, -1900529, 1, 0, -1835000, 1, 0, -1703932, 3, 0, -1572856, 3, 0, -1507328, 3, 0, -1441780, 1, 0, -1376253, 3, 0, -1245178, 1, 0, -1245166, 1, 0, -1048564, 1, 0, -851963, 1, 0, -720884, 1, 0, -589805, 3, 0, -524288, 1, 0, -524284, 1, 0, -458729, 3, 0, -327660, 3, 0, -262134, 1, 0, -196591, 3, 0, -65516, 1, 0, 0, 1, 0, 131087, 1, 0, 262148, 3, 0, 262152, 3, 0, 262156, 3, 0, 327680, 3, 0, 524288, 1, 0, 524291, 1, 0, 655370, 3, 0, 786437, 1, 0 )
+_sections_unfolded = [ "Cell" ]
+
+[node name="Node2D" type="Node2D" parent="." index="1"]
+
+editor/display_folded = true
+
+[node name="spiker1" parent="Node2D" index="0" instance=ExtResource( 2 )]
+
+position = Vector2( 150.805, -30.2051 )
+
+[node name="spiker2" parent="Node2D" index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 1117.88, 97.2252 )
+
+[node name="spiker3" parent="Node2D" index="2" instance=ExtResource( 2 )]
+
+position = Vector2( 921.648, -736.635 )
+
+[node name="spiker4" parent="Node2D" index="3" instance=ExtResource( 2 )]
+
+position = Vector2( 530.342, -1245.89 )
+
+[node name="spiker5" parent="Node2D" index="4" instance=ExtResource( 2 )]
+
+position = Vector2( 927.245, -1438.05 )
+
+[node name="spiker6" parent="Node2D" index="5" instance=ExtResource( 2 )]
+
+position = Vector2( 1125.81, -1887.92 )
+
+[node name="spiker7" parent="Node2D" index="6" instance=ExtResource( 2 )]
+
+position = Vector2( 187.35, -2203.99 )
+
+[node name="spiker8" parent="Node2D" index="7" instance=ExtResource( 2 )]
+
+position = Vector2( 284.221, -2524.1 )
+
+[node name="spiker9" parent="Node2D" index="8" instance=ExtResource( 2 )]
+
+position = Vector2( 1192.16, -2910.8 )
+
+[node name="spiker10" parent="Node2D" index="9" instance=ExtResource( 2 )]
+
+position = Vector2( 153.532, -3486.72 )
+
+
